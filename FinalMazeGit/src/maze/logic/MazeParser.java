@@ -13,11 +13,14 @@ import java.util.Scanner;
  */
 public class MazeParser {
 
-	File mazeText;
+	private String[][] maze;
+	
+	private File mazeText;
 
 	//method made by Josh Bagwell
-	public MazeParser() {
-		URL url = getClass().getResource("/maze/resources/maze.path");
+	public MazeParser(String pathName) {
+		URL url = getClass().getResource(pathName);
+		maze = new String[3][11];
 		try {
 			mazeText = new File(url.toURI());
 		} catch (URISyntaxException e) {
@@ -27,22 +30,44 @@ public class MazeParser {
 	}
 	
 	public static void main(String[] args) {
-		MazeParser p = new MazeParser();
+		MazeParser p = new MazeParser("/maze/resources/line.path");
 		p.ReadFile();
 	}
 	
 	//incomplete method needs more work
+	/**
+	 * Created by Josh
+	 * Reads the file to interpret the maze
+	 */
 	public void ReadFile(){
 		try {
 			Scanner scan = new Scanner(mazeText);
-			while (scan.hasNextLine()) {
-				System.out.print(scan.next());
+			int rowCount = 0;
+			while (scan.hasNext()) {
+				String line = scan.nextLine();
+				String[] splitLine = line.split(" ");
+				for (int i = 0; i < splitLine.length; i++) {
+					maze[rowCount][i] = splitLine[i];
+				}
+				rowCount++;
 			}
+			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+	}
+	public void printMaze(){
+		for (int i = 0; i < maze.length; i++) {
+			for (int j = 0; j < maze[i].length; j++) {
+				System.out.print(maze[i][j]);
+			}
+			System.out.println();
+		}
+	}
+	public String getValueAt(int i, int j){
+		return maze[i][j];
 	}
 
 }
