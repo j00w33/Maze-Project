@@ -8,16 +8,16 @@ import java.util.Scanner;
 
 /**
  * @author Josh Bagwell
- * @desc Class that takes a file and parses it to make a maze
- * incomplete class. needs more work
+ * @desc Class that takes a file and parses it to make a maze incomplete class.
+ *       needs more work
  */
 public class MazeParser {
 
 	private String[][] maze;
-	
+
 	private File mazeText;
 
-	//method made by Josh Bagwell
+	// method made by Josh Bagwell
 	public MazeParser(String pathName) {
 		URL url = getClass().getResource(pathName);
 		maze = new String[3][11];
@@ -28,18 +28,17 @@ public class MazeParser {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void main(String[] args) {
-		MazeParser p = new MazeParser("/maze/resources/line.path");
-		p.ReadFile();
-	}
-	
-	//incomplete method needs more work
+
+	// public static void main(String[] args) {
+	// MazeParser p = new MazeParser("/maze/resources/line.path");
+	// p.ReadFile();
+	// }
+
+	// incomplete method needs more work
 	/**
-	 * Created by Josh
-	 * Reads the file to interpret the maze
+	 * Created by Josh Reads the file to interpret the maze
 	 */
-	public void ReadFile(){
+	public void ReadFile() {
 		try {
 			Scanner scan = new Scanner(mazeText);
 			int rowCount = 0;
@@ -51,14 +50,18 @@ public class MazeParser {
 				}
 				rowCount++;
 			}
-			
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	public void printMaze(){
+
+	/**
+	 * Josh Prints a visual representation of the maze
+	 */
+	public void printMaze() {
 		for (int i = 0; i < maze.length; i++) {
 			for (int j = 0; j < maze[i].length; j++) {
 				System.out.print(maze[i][j]);
@@ -66,8 +69,35 @@ public class MazeParser {
 			System.out.println();
 		}
 	}
-	public String getValueAt(int i, int j){
-		return maze[i][j];
+
+	/**
+	 * Josh
+	 * 
+	 * @param row
+	 * @param col
+	 * @return value at [row][col]
+	 */
+	public String getValueAt(int row, int col) {
+		return maze[row][col];
+	}
+
+	/**
+	 * Josh// getter for the maze
+	 */
+	public String[][] getMaze() {
+		return this.maze;
+	}
+	
+	public int getNumRow(){
+		int count = 0;
+		for (int i = 0; i < maze.length; i++) {
+			for (int j = 0; j < maze[i].length; j++) {
+				
+			}
+			count++;
+		}
+		
+		return count;
 	}
 
 }
