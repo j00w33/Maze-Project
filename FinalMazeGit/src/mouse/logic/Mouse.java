@@ -5,22 +5,25 @@ import maze.logic.MazeParser;
 public class Mouse {
 
 	private MazeParser parser;
+	
+	private String current ="";
+	private String next = "";
+	private String[][] maze;
 
 	public Mouse() {
 		parser = new MazeParser("/maze/resources/line.path");
-
+		maze = parser.getMaze();
 	}
 
-	// Josh
-	// public void moveMouse(){
-	// String s = "";
-	// for (int i = 0; i < .length; i++) {
-	//
-	// }
-	// }
+	public void moveMouse(){
+		for (int i = 0; i < maze.length; i++) {
+			for (int j = 0; j < maze[i].length; j++) {
+				current = maze[i][j];
+			}
+		}
+	}
 
 	public static void main(String[] args) {
-		System.out.println(new Mouse().parser.getNumRow());
+		new Mouse().moveMouse();
 	}
-
 }

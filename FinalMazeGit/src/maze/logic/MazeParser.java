@@ -27,6 +27,7 @@ public class MazeParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		ReadFile();
 	}
 
 	// public static void main(String[] args) {
