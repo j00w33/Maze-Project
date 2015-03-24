@@ -19,7 +19,8 @@ public class MazeParser {
 
 	// method made by Josh Bagwell
 	public MazeParser(String pathName) {
-		URL url = getClass().getResource(pathName); // Retrieves the file from another package
+		URL url = getClass().getResource(pathName); // Retrieves the file from
+													// another package
 		maze = new String[3][11];
 		try {
 			mazeText = new File(url.toURI());
@@ -30,11 +31,11 @@ public class MazeParser {
 		ReadFile();
 	}
 
-	 public static void main(String[] args) {
-	 MazeParser p = new MazeParser("/maze/resources/line.path");
-	 p.ReadFile();
-	 p.printMaze();
-	 }
+	public static void main(String[] args) {
+		MazeParser p = new MazeParser("/maze/resources/line.path");
+		p.ReadFile();
+		p.printMaze();
+	}
 
 	// incomplete method needs more work
 	/**
@@ -89,16 +90,16 @@ public class MazeParser {
 	public String[][] getMaze() {
 		return this.maze;
 	}
-	
-	public int getNumRow(){
+
+	public int getNumRow() {
 		int count = 0;
 		for (int i = 0; i < maze.length; i++) {
 			for (int j = 0; j < maze[i].length; j++) {
-				
+
 			}
 			count++;
 		}
-		
+
 		return count;
 	}
 

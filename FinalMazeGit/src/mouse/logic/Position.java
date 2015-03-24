@@ -1,9 +1,10 @@
-package maze.logic;
+package mouse.logic;
 
-/*
- * This class passes in the position of the mouse 
- * and then determines the position of the mouse and moves it
- * Josh
+//Position class
+/**
+ * 
+ * @author Josh
+ *
  */
 public class Position {
 
@@ -34,14 +35,14 @@ public class Position {
 		return this._col;
 	}
 
-//	// generates a hashcode
-//	public int hashCode() {
-//		int prime = 31;
-//		int result = 1;
-//		result = prime * result + this._col;
-//		result = prime * result + this._row;
-//		return result;
-//	}
+	// generates a hashcode
+	public int hashCode() {
+		int prime = 31;
+		int result = 1;
+		result = prime * result + this._col;
+		result = prime * result + this._row;
+		return result;
+	}
 
 	// overridden equals method
 	public boolean equals(Object obj) {
@@ -66,10 +67,9 @@ public class Position {
 	}
 
 	// overridden toString
-	// todo: implement new toString
-	// Andrew
 	public String toString() {
-		String s = "";
-		return s;
+		String result = String.valueOf((char) (getCol() + 97)
+				+ (char) (getRow() + 49));
+		return result;
 	}
 }
