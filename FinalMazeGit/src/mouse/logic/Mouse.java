@@ -19,6 +19,11 @@ public class Mouse {
 		for (int i = 0; i < maze.length; i++) {
 			for (int j = 0; j < maze[i].length; j++) {
 				current = maze[i][j];
+				if (current == "P") {
+					next = current;
+					maze[i][j] = "#";
+				}
+				System.out.println(maze[i][j]);
 			}
 		}
 	}
