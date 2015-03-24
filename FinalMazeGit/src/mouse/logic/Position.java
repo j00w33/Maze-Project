@@ -1,6 +1,11 @@
-package maze.logic;
+package mouse.logic;
 
 //Position class
+/**
+ * 
+ * @author Josh
+ *
+ */
 public class Position {
 
 	// row and columns
