@@ -11,5 +11,4 @@ public class Maze {
 	// maybe have 2d array of chars, maybe not?
 	
 	/*Josh End*/
-
 }
