@@ -33,11 +33,9 @@ public class MazeParser {
 
 	public static void main(String[] args) {
 		MazeParser p = new MazeParser("/maze/resources/line.path");
-		p.ReadFile();
 		p.printMaze();
 	}
 
-	// incomplete method needs more work
 	/**
 	 * Created by Josh Reads the file to interpret the maze
 	 */
