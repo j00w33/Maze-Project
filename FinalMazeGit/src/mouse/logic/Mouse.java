@@ -15,6 +15,7 @@ public class Mouse extends Client {
 
 	public Mouse() {
 		super();
+		this.
 		maze = new Maze("/maze/resources/line.path");
 		findRat(maze);
 		getAvailableMoves(MousePos);
@@ -44,18 +45,33 @@ public class Mouse extends Client {
 
 	// josh end
 
+	// josh start
 	public ArrayList<Position> getAvailableMoves(Position pos) {
-		ArrayList<Position> moves = new ArrayList<Position>();
+		//arraylist to store all of the adjacent spaces
+		ArrayList<Position> spaces = new ArrayList<Position>();
 		// up move
-		moves.add(pos.getOffSet(-1, 0));
+		spaces.add(pos.getOffSet(-1, 0));
 		// down move
-		moves.add(pos.getOffSet(1, 0));
+		spaces.add(pos.getOffSet(1, 0));
 		// move left
-		moves.add(pos.getOffSet(0, -1));
+		spaces.add(pos.getOffSet(0, -1));
 		// move right
-		moves.add(pos.getOffSet(0, 1));
-
+		spaces.add(pos.getOffSet(0, 1));
+		
+		//new arraylist to store all of the AVALIABLE moves
+		ArrayList<Position> moves = new ArrayList<Position>();
+		for (Position position : spaces) {
+			if (maze.getValueAt(position).equals("P")) {
+				moves.add(position);
+			}
+		}
 		return moves;
+	}
+	
+	public void moveMouse(Position pos){
+//		maze.get
+		
+		MousePos = pos;
 	}
 
 	public static void main(String[] args) {

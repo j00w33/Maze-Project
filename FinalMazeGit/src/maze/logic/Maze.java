@@ -6,6 +6,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Scanner;
 
+import mouse.logic.Position;
+
 /**
  * @author Josh Bagwell
  * @desc Reads the file and turns it into a 2d array of strings
@@ -81,8 +83,8 @@ public class Maze {
 	 * @param col
 	 * @return value at [row][col]
 	 */
-	public String getValueAt(int row, int col) {
-		return maze[row][col];
+	public String getValueAt(Position pos) {
+		return maze[pos.getRow()][pos.getCol()];
 	}
 
 	/**

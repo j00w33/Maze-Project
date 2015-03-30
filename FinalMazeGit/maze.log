@@ -19,3 +19,57 @@ END MESSAGE
 LOG DATE: Mon Mar 30 12:33:21 EDT 2015
 LOG MESSAGE: IOException in Client, server not found
 END MESSAGE
+LOG DATE: Mon Mar 30 12:42:54 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:42:55 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:45:02 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:45:03 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:45:29 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:45:30 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:46:08 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:46:10 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:46:34 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:46:35 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:47:12 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:47:13 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:47:20 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:47:21 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:49:32 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:49:33 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:49:47 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:49:48 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
