@@ -1,21 +1,22 @@
 package mouse.logic;
 
 import socket.Client;
-import maze.logic.MazeParser;
+import maze.logic.Maze;
 
 public class Mouse extends Client {
 
-	private MazeParser parser;
+	private Maze parser;
 
 	// private String current ="";
 	// private String next = "";
 	private String[][] maze;
-	private Position pos;
+	private Position MousePos;
 
 	public Mouse() {
 		super();
-		parser = new MazeParser("/maze/resources/line.path");
+		parser = new Maze("/maze/resources/line.path");
 		maze = parser.getMaze();
+
 	}
 
 	// josh start
@@ -40,7 +41,7 @@ public class Mouse extends Client {
 
 	// josh end
 
-	public void moveMouse() {
+	public void moveMouse(Position pos) {
 
 	}
 
