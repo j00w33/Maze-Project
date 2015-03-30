@@ -11,7 +11,9 @@ import maze.logic.LogFile;
  *Client class for project
  */
 public class Client {
-	public Client(String URL) {
+	
+	
+	public Client() {
 
 		
 		String serverName = "127.0.0.1";

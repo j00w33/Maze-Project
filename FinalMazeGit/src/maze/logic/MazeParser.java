@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 /**
  * @author Josh Bagwell
- * @desc Class that takes a file and parses it to make a maze incomplete class.
- *       needs more work
+ * @desc Reads the file and turns it into a 2d array of strings
  */
 public class MazeParser {
 

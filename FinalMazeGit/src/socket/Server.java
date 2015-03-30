@@ -8,8 +8,7 @@ import maze.logic.LogFile;
 
 /**
  * 
- * @author Andrew
- *Server class for Project
+ * @author Andrew Server class for Project
  */
 public class Server extends Thread {
 
@@ -17,9 +16,14 @@ public class Server extends Thread {
 	private ServerSocket serverSocket;
 
 	// Server constructor
-	public Server(int port) throws IOException {
-		serverSocket = new ServerSocket(port);
-		serverSocket.setSoTimeout(10000);
+	public Server(int port) {
+		try {
+			serverSocket = new ServerSocket(port);
+			serverSocket.setSoTimeout(10000);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void run() {
@@ -34,7 +38,7 @@ public class Server extends Thread {
 			} catch (IOException s) {
 				LogFile.write("IOException in socket, cannot open port");
 				break;
-			} 
+			}
 		}
 	}
 }
