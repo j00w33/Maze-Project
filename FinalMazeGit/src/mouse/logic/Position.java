@@ -68,8 +68,6 @@ public class Position {
 
 	// overridden toString
 	public String toString() {
-		String result = String.valueOf((char) (getCol() + 97)
-				+ (char) (getRow() + 49));
-		return result;
+		return "( " + getRow() + ", " + getCol() + " )";
 	}
 }
