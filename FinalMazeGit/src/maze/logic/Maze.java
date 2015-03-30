@@ -6,17 +6,20 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Scanner;
 
+import socket.Server;
+
 /**
  * @author Josh Bagwell
  * @desc Reads the file and turns it into a 2d array of strings
  */
-public class Maze {
+public class Maze extends Server{
 
 	private String[][] maze;
 	private File mazeText;
 
 	// method made by Josh Bagwell
 	public Maze(String pathName) {
+		super(13000);
 		URL url = getClass().getResource(pathName); // Retrieves the file from
 													// another package
 		maze = new String[3][13];
