@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class Maze {
 
 	private String[][] maze;
-
 	private File mazeText;
 
 	// method made by Josh Bagwell
@@ -24,8 +23,7 @@ public class Maze {
 		try {
 			mazeText = new File(url.toURI());
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace();;
 		}
 		ReadFile();
 	}
@@ -33,6 +31,12 @@ public class Maze {
 	public static void main(String[] args) {
 		Maze p = new Maze("/maze/resources/line.path");
 		p.printMaze();
+	}
+	
+	public void debug(String message, boolean isDebugging){		
+		if (isDebugging) {
+			LogFile.write(message);
+		}
 	}
 
 	/**
