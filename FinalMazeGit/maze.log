@@ -1,3 +1,21 @@
 LOG DATE: Tue Mar 17 16:41:11 EDT 2015
 LOG MESSAGE: Hello
 END MESSAGE
+LOG DATE: Mon Mar 30 12:13:43 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:13:44 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:14:43 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:14:44 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
+LOG DATE: Mon Mar 30 12:33:20 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 12:33:21 EDT 2015
+LOG MESSAGE: IOException in Client, server not found
+END MESSAGE
