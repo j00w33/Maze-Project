@@ -25,7 +25,7 @@ public class Maze extends Server {
 
 		URL url = getClass().getResource(pathName); // Retrieves the file from
 													// another package *Josh
-		maze = new String[13][13];
+		maze = new String[3][13];
 		try {
 			mazeText = new File(url.toURI());
 		} catch (URISyntaxException e) {
@@ -38,7 +38,7 @@ public class Maze extends Server {
 	// Andrew
 	public static void main(String[] args) {
 
-		Maze p = new Maze("/maze/resources/maze.path");
+		Maze p = new Maze("/maze/resources/line.path");
 		p.printMaze();
 		p.start();
 	}
@@ -52,6 +52,7 @@ public class Maze extends Server {
 	/**
 	 * Created by Josh Reads the file to interpret the maze
 	 */
+	@SuppressWarnings("resource")
 	public void ReadFile() {
 		try {
 			Scanner scan = new Scanner(mazeText);
@@ -78,9 +79,9 @@ public class Maze extends Server {
 	public void printMaze() {
 		for (int i = 0; i < maze.length; i++) {
 			for (int j = 0; j < maze[i].length; j++) {
-				System.out.print(maze[i][j]);
+				System.out.print(" | " + maze[i][j]);
 			}
-			System.out.println();
+			System.out.println(" |");
 		}
 	}
 
@@ -95,6 +96,11 @@ public class Maze extends Server {
 		return maze[pos.getRow()][pos.getCol()];
 	}
 
+	public void setValue(Position pos, String val) {
+		maze[pos.getRow()][pos.getCol()] = val;
+
+	}
+
 	/**
 	 * Josh// getter for the maze
 	 */
@@ -102,15 +108,15 @@ public class Maze extends Server {
 		return this.maze;
 	}
 
-	 public int getNumCol(){
-		 int count = 0;
-		 
-		 for (int i = 0; i < maze.length; i++) {
+	public int getNumCol() {
+		int count = 0;
+
+		for (int i = 0; i < maze.length; i++) {
 			count = maze[i].length;
 		}
-		 
-		 return count;
-	 }
+
+		return count;
+	}
 
 	public int getNumRow() {
 		int count = 0;
