@@ -16,14 +16,21 @@ public class Mouse extends Client {
 	// Andrew
 	public Mouse() {
 		super();
-		this.
-		maze = new Maze("/maze/resources/line.path");
+		
+		maze = new Maze("/maze/resources/maze.path");
 		findRat(maze);
-		getAvailableMoves(MousePos);
+
+		// Josh
+		for (int i = 0; i < maze.getNumCol(); i++) {
+			ArrayList<Position> moves = getAvailableMoves(MousePos);
+			if (!moves.isEmpty()) {
+				moveMouse(moves.get(0));
+			}			
+		}
 
 	}
 
-	// josh start
+//	 josh start
 	/**
 	 * finds the position of the rat in the maze and returns it
 	 */
@@ -48,7 +55,7 @@ public class Mouse extends Client {
 
 	// josh start
 	public ArrayList<Position> getAvailableMoves(Position pos) {
-		//arraylist to store all of the adjacent spaces
+		// arraylist to store all of the adjacent spaces
 		ArrayList<Position> spaces = new ArrayList<Position>();
 		// up move
 		spaces.add(pos.getOffSet(-1, 0));
@@ -58,8 +65,8 @@ public class Mouse extends Client {
 		spaces.add(pos.getOffSet(0, -1));
 		// move right
 		spaces.add(pos.getOffSet(0, 1));
-		
-		//new arraylist to store all of the AVALIABLE moves
+
+		// new arraylist to store all of the AVALIABLE moves
 		ArrayList<Position> moves = new ArrayList<Position>();
 		for (Position position : spaces) {
 			if (maze.getValueAt(position).equals("P")) {
@@ -68,15 +75,18 @@ public class Mouse extends Client {
 		}
 		return moves;
 	}
-	
-	public void moveMouse(Position pos){
-//		maze.get
-		
+
+	public void moveMouse(Position pos) {
+		String place = maze.getValueAt(pos);
+		maze.getMaze()[MousePos.getRow()][MousePos.getCol()] = "x";
+		maze.getMaze()[pos.getRow()][pos.getCol()] = "R";
+		maze.printMaze();
+		System.out.println();
 		MousePos = pos;
 	}
 
 	public static void main(String[] args) {
 		Mouse m = new Mouse();
-		
+
 	}
 }

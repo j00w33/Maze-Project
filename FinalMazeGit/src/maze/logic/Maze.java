@@ -2,7 +2,6 @@ package maze.logic;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Scanner;
@@ -14,7 +13,7 @@ import socket.Server;
  * @author Josh Bagwell
  * @desc Reads the file and turns it into a 2d array of strings
  */
-public class Maze extends Server{
+public class Maze extends Server {
 
 	private String[][] maze;
 	private File mazeText;
@@ -23,27 +22,28 @@ public class Maze extends Server{
 	public Maze(String pathName) {
 		// Andrew setting up server socket for maze
 		super(PORT);
-		
+
 		URL url = getClass().getResource(pathName); // Retrieves the file from
 													// another package *Josh
-		maze = new String[3][13];
+		maze = new String[13][13];
 		try {
 			mazeText = new File(url.toURI());
 		} catch (URISyntaxException e) {
-			e.printStackTrace();;
+			e.printStackTrace();
+			;
 		}
 		ReadFile();
 	}
 
-	// Andrew 
+	// Andrew
 	public static void main(String[] args) {
-		
-		Maze p = new Maze("/maze/resources/line.path");
+
+		Maze p = new Maze("/maze/resources/maze.path");
 		p.printMaze();
 		p.start();
 	}
-	
-	public void debug(String message, boolean isDebugging){		
+
+	public void debug(String message, boolean isDebugging) {
 		if (isDebugging) {
 			LogFile.write(message);
 		}
@@ -102,12 +102,19 @@ public class Maze extends Server{
 		return this.maze;
 	}
 
+	 public int getNumCol(){
+		 int count = 0;
+		 
+		 for (int i = 0; i < maze.length; i++) {
+			count = maze[i].length;
+		}
+		 
+		 return count;
+	 }
+
 	public int getNumRow() {
 		int count = 0;
 		for (int i = 0; i < maze.length; i++) {
-			for (int j = 0; j < maze[i].length; j++) {
-
-			}
 			count++;
 		}
 
