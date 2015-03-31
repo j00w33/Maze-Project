@@ -76,5 +76,6 @@ public class Mouse extends Client {
 
 	public static void main(String[] args) {
 		Mouse m = new Mouse();
+		
 	}
 }

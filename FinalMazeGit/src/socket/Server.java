@@ -11,6 +11,8 @@ import maze.logic.LogFile;
  * @author Andrew Server class for Project
  */
 public class Server extends Thread {
+	
+	public final static int PORT = 13000;
 
 	// New ServerSocket
 	private ServerSocket serverSocket;
@@ -22,7 +24,7 @@ public class Server extends Thread {
 			serverSocket.setSoTimeout(10000);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LogFile.write("IO Exception cannot open socket");
 		}
 	}
 
@@ -36,7 +38,7 @@ public class Server extends Thread {
 						+ server.getRemoteSocketAddress());
 				server.close();
 			} catch (IOException s) {
-				LogFile.write("IOException in socket, cannot open port");
+				LogFile.write("IOException in Server, cannot open port / Or Timeout");
 				break;
 			}
 		}

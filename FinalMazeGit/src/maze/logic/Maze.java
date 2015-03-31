@@ -2,9 +2,11 @@ package maze.logic;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Scanner;
+
 import mouse.logic.Position;
 import socket.Server;
 
@@ -19,9 +21,11 @@ public class Maze extends Server{
 
 	// method made by Josh Bagwell
 	public Maze(String pathName) {
-		super(13000);
+		// Andrew setting up server socket for maze
+		super(PORT);
+		
 		URL url = getClass().getResource(pathName); // Retrieves the file from
-													// another package
+													// another package *Josh
 		maze = new String[3][13];
 		try {
 			mazeText = new File(url.toURI());
@@ -31,9 +35,12 @@ public class Maze extends Server{
 		ReadFile();
 	}
 
+	// Andrew 
 	public static void main(String[] args) {
+		
 		Maze p = new Maze("/maze/resources/line.path");
 		p.printMaze();
+		p.start();
 	}
 	
 	public void debug(String message, boolean isDebugging){		

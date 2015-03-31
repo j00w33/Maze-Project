@@ -73,3 +73,36 @@ END MESSAGE
 LOG DATE: Mon Mar 30 12:49:48 EDT 2015
 LOG MESSAGE: IOException in Client, server not found
 END MESSAGE
+LOG DATE: Mon Mar 30 18:40:32 EDT 2015
+LOG MESSAGE: Waiting for client on port 13000...
+END MESSAGE
+LOG DATE: Mon Mar 30 18:40:42 EDT 2015
+LOG MESSAGE: IOException in socket, cannot open port
+END MESSAGE
+LOG DATE: Mon Mar 30 18:42:26 EDT 2015
+LOG MESSAGE: Waiting for client on port 13000...
+END MESSAGE
+LOG DATE: Mon Mar 30 18:42:36 EDT 2015
+LOG MESSAGE: IOException in socket, cannot open port
+END MESSAGE
+LOG DATE: Mon Mar 30 21:50:29 EDT 2015
+LOG MESSAGE: Waiting for client on port 13000...
+END MESSAGE
+LOG DATE: Mon Mar 30 21:50:32 EDT 2015
+LOG MESSAGE: Connecting to 127.0.0.1 on port 13000
+END MESSAGE
+LOG DATE: Mon Mar 30 21:50:32 EDT 2015
+LOG MESSAGE: Just connected to /127.0.0.1:13000
+LOG DATE: Mon Mar 30 21:50:32 EDT 2015
+END MESSAGE
+LOG MESSAGE: Just connected to /127.0.0.1:64942
+END MESSAGE
+LOG DATE: Mon Mar 30 21:50:32 EDT 2015
+LOG MESSAGE: Waiting for client on port 13000...
+END MESSAGE
+LOG DATE: Mon Mar 30 21:50:32 EDT 2015
+LOG MESSAGE: IO Exception cannot open socket
+END MESSAGE
+LOG DATE: Mon Mar 30 21:50:42 EDT 2015
+LOG MESSAGE: IOException in Server, cannot open port / Or Timeout
+END MESSAGE
