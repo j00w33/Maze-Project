@@ -1,11 +1,16 @@
 package maze.logic;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Scanner;
 
+import mouse.logic.Mouse;
 import mouse.logic.Position;
 import socket.Server;
 
@@ -17,6 +22,7 @@ public class Maze extends Server {
 
 	private String[][] maze;
 	private File mazeText;
+	private Mouse receive;
 
 	// method made by Josh Bagwell
 	public Maze(String pathName) {
@@ -25,6 +31,7 @@ public class Maze extends Server {
 
 		URL url = getClass().getResource(pathName); // Retrieves the file from
 													// another package *Josh
+
 		maze = new String[13][13];
 		try {
 			mazeText = new File(url.toURI());
@@ -41,11 +48,43 @@ public class Maze extends Server {
 		Maze p = new Maze("/maze/resources/maze.path");
 		p.printMaze();
 		p.start();
+		p.receive();
 	}
 
 	public void debug(String message, boolean isDebugging) {
 		if (isDebugging) {
 			LogFile.write(message);
+		}
+	}
+
+	public void receive() {
+		try {
+			DataInputStream dis = new DataInputStream(socket.getInputStream());
+			ObjectInputStream ois = new ObjectInputStream(
+					socket.getInputStream());
+			receive = (Mouse) ois.readObject();
+			Position pos = receive.findRat(this);
+			receive.solve();
+			send(String.valueOf(true));
+
+			// if (receive) {
+			//
+			// }
+		} catch (IOException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			LogFile.write(e.getStackTrace().toString());
+		}
+	}
+
+	public void send(String s) {
+
+		try {
+			DataOutputStream dos = new DataOutputStream(
+					this.socket.getOutputStream());
+			dos.writeUTF(s);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -102,15 +141,15 @@ public class Maze extends Server {
 		return this.maze;
 	}
 
-	 public int getNumCol(){
-		 int count = 0;
-		 
-		 for (int i = 0; i < maze.length; i++) {
+	public int getNumCol() {
+		int count = 0;
+
+		for (int i = 0; i < maze.length; i++) {
 			count = maze[i].length;
 		}
-		 
-		 return count;
-	 }
+
+		return count;
+	}
 
 	public int getNumRow() {
 		int count = 0;

@@ -1,6 +1,7 @@
 package mouse.logic;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import maze.logic.Maze;
 import socket.Client;
@@ -16,21 +17,26 @@ public class Mouse extends Client {
 	// Andrew
 	public Mouse() {
 		super();
-		
+
 		maze = new Maze("/maze/resources/maze.path");
 		findRat(maze);
 
 		// Josh
-		for (int i = 0; i < maze.getNumCol(); i++) {
-			ArrayList<Position> moves = getAvailableMoves(MousePos);
-			if (!moves.isEmpty()) {
-				moveMouse(moves.get(0));
-			}			
-		}
+		solve();
 
 	}
 
-//	 josh start
+	public void solve() {
+		for (int i = 0; i < maze.getNumCol(); i++) {
+			ArrayList<Position> moves = getAvailableMoves(MousePos);
+			Random gen = new Random();
+			if (!moves.isEmpty()) {
+				moveMouse(moves.get(gen.nextInt(moves.size())));
+			}
+		}
+	}
+
+	// josh start
 	/**
 	 * finds the position of the rat in the maze and returns it
 	 */

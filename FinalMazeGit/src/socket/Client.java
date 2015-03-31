@@ -12,6 +12,7 @@ import maze.logic.LogFile;
  */
 public class Client {
 	
+	protected Socket client;
 	
 	public Client() {
 
@@ -21,7 +22,7 @@ public class Client {
 		try {
 			LogFile.write("Connecting to " + serverName + " on port "
 					+ port);
-			Socket client = new Socket(serverName, port);
+			client = new Socket(serverName, port);
 			LogFile.write("Just connected to "
 					+ client.getRemoteSocketAddress());
 			client.close();
