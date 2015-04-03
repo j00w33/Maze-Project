@@ -1,9 +1,5 @@
 package mouse.logic;
 
-import java.util.ArrayList;
-import java.util.Random;
-
-import maze.logic.Maze;
 import socket.Client;
 
 public class Mouse extends Client {
@@ -22,18 +18,23 @@ public class Mouse extends Client {
 	// andrew
 	public void solveMaze() {
 		
+		//solves maze
+		
 	}
 
 	public boolean canMove() {
+		
+		//unneeded method (maybe
 		return false;
 		
 	}
 
 	public void moveMouse() {
-		
+		//pings the server and moves the mouse accordingly
 	}
 
 	public static void main(String[] args) {
+		//main
 		new Mouse();
 
 	}
