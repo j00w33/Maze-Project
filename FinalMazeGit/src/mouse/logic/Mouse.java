@@ -31,25 +31,16 @@ public class Mouse extends Client {
 		return !moves.isEmpty();
 	}
 
+	//andrew
 	public void solveMaze(ArrayList<Position> moves) {
 		Random gen = new Random();
 		ArrayList<Position> temp = moves;
+		//josh
 		if (canMove(moves)) {
 			moveMouse(moves.get(gen.nextInt(moves.size())));
 			temp = getAvailableMoves(mousePos);
 			solveMaze(temp);
 		}
-//		if (moves.isEmpty()) {
-//			temp = getSurroundingSpaces(mousePos);
-//			for (Position position : temp) {
-//				if (maze.getValueAt(position).equals("x")) {
-//					Position prevMouse = mousePos;
-//					moveMouse(position);
-//					maze.setValue(prevMouse, "X");
-//				}
-//			}
-//			solveMaze(temp);
-//		}
 
 	}
 
