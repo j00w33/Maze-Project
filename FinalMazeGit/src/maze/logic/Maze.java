@@ -32,7 +32,7 @@ public class Maze extends Server {
 		URL url = getClass().getResource(pathName); // Retrieves the file from
 													// another package *Josh
 
-		maze = new String[13][13];
+		maze = new String[3][13];
 		try {
 			mazeText = new File(url.toURI());
 		} catch (URISyntaxException e) {

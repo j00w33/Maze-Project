@@ -18,7 +18,7 @@ public class Mouse extends Client {
 	public Mouse() {
 		super();
 
-		maze = new Maze("/maze/resources/maze.path");
+		maze = new Maze("/maze/resources/line.path");
 		findRat(maze);
 
 		// Josh
