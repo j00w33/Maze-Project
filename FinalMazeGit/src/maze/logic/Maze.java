@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import mouse.logic.Position;
@@ -17,6 +18,7 @@ public class Maze extends Server {
 
 	private String[][] maze;
 	private File mazeText;
+	private Position mousePos;
 
 	// method made by Josh Bagwell
 	public Maze(String pathName) {
@@ -33,6 +35,60 @@ public class Maze extends Server {
 			;
 		}
 		ReadFile();
+	}
+
+	public boolean canMove(ArrayList<Position> moves) {
+		return !moves.isEmpty();
+	}
+
+	// josh start
+	/**
+	 * finds the position of the rat in the maze and returns it
+	 */
+	public Position findRat() {
+		// sets a new position to 0,0
+		Position pos = new Position(0, 0);
+		// iterate through the maze
+		for (int i = 0; i < getMaze().length; i++) {
+			for (int j = 0; j < getMaze()[i].length; j++) {
+				// is the value = to "R"?
+				if (getMaze()[i][j].equals("R")) {
+					// yes?: return the position of R
+					pos = new Position(i, j);
+					mousePos = pos;
+				}
+			}
+		}
+		return pos;
+	}
+
+	public ArrayList<Position> getSurroundingSpaces(Position pos) {
+		// new arraylist to store all of the AVALIABLE moves
+		ArrayList<Position> spaces = new ArrayList<Position>();
+		// up move
+		spaces.add(pos.getOffSet(-1, 0));
+		// down move
+		spaces.add(pos.getOffSet(1, 0));
+		// move left
+		spaces.add(pos.getOffSet(0, -1));
+		// move right
+		spaces.add(pos.getOffSet(0, 1));
+
+		return spaces;
+
+	}
+
+	// josh start
+	public ArrayList<Position> getAvailableMoves(Position pos) {
+		// arraylist to store all of the adjacent spaces
+		ArrayList<Position> spaces = getSurroundingSpaces(pos);
+		ArrayList<Position> moves = new ArrayList<Position>();
+		for (Position position : spaces) {
+			if (getValueAt(position).equals("P")) {
+				moves.add(position);
+			}
+		}
+		return moves;
 	}
 
 	// Andrew
